@@ -1,0 +1,24 @@
+OPEN(bukuPtr,dataBuku)
+OPEN(bukuPtr2,dataBuku2)
+REWRITE(bukuPtr3)
+
+WHILE NOT EOF bukuPtr || NOT EOF bukuPtr2
+DO
+    IF EOF bukuPtr :
+        READ(bukuPtr2,dataBuku2)
+        WRITE(bukuPtr3,dataBuku2)
+    EL IF EOF bukuPtr2 :
+        READ(bukuPtr,dataBuku)
+        WRITE(bukuPtr3,dataBuku)
+    EL IF dataBuku.kode_buku < dataBuku2.kode_buku :
+        READ(bukuPtr,dataBuku)
+        WRITE(bukuPtr3,dataBuku)
+    ELSE :
+        READ(bukuPtr2,dataBuku2)
+        WRITE(bukuPtr3,dataBuku2)
+    END IF
+END WHILE
+
+CLOSE(bukuPtr)
+CLOSE(bukuPtr2)
+CLOSE(bukuPtr3)
