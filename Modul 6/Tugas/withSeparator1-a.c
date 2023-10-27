@@ -1,5 +1,37 @@
 // Dengan Separator
 
+// Algoritma
+/*
+- DEFINE STRUCT
+- DEFINE variable *filePtr with FILE type
+- DEFINE sum, sum_all,separator and current variable
+
+- OPEN FILE
+
+  IF(EOF(FILE))
+    PRINT : FILE KOSONG
+  ELSE
+    READ FILE
+    DO
+      WHILE(!EOF(FILE) && KEY === SEPARATOR)
+        READ FILE
+      ENDWHILE
+      SUM = 0
+      CURRENT = KEY
+      WHILE(!EOF(FILE) && KEY !== SEPARATOR)
+        SUM += KEY.QTY
+        READ FILE
+      ENDWHILE
+      IF CURRENT !== SEPARATOR
+        PRINT : JUMLAH PEMINJAMAN ${CURRENT} : ${SUM}
+      ENDIF
+      SUM_ALL += SUM
+    WHILE(!EOF(FILE))
+      PRINT : JUMLAH SELURUH PINJAMAN : ${SUM_ALL}
+
+    FILE CLOSE
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
