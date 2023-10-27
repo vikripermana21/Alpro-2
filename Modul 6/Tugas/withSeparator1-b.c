@@ -29,11 +29,11 @@ int main ()
    strcpy(current, pinjam.kode_buku);
    while(! feof(Pinjaman) && strcmp(pinjam.kode_buku,Separator)!=0)
     {
-     sum = sum + pinjam.qty;
+     sum = sum + pinjam.harga;
      fread(&pinjam, sizeof(pinjam), 1, Pinjaman);
     }
     if(strcmp(current,"9999")){
-      printf("jumlah peminjaman %s: %d\n", current, sum);
+      printf("jumlah nilai peminjaman %s: %d\n", current, sum);
     }
    sum_all = sum_all + sum;
    if (feof(Pinjaman) && strcmp(pinjam.kode_buku,Separator)==0)
@@ -41,9 +41,9 @@ int main ()
      break;
    }
   }while(!feof(Pinjaman));
-  
+
   printf("===========================================\n");
-  printf("Jumlah Seluruh Pinjaman : %d", sum_all);
+  printf("Jumlah Nilai Seluruh Pinjaman : %d", sum_all);
  }
 fclose(Pinjaman);
 return 0;

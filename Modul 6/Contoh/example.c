@@ -11,7 +11,7 @@
     FILE *bukuPtr;
 
     void isiData(){
-    bukuPtr = fopen("dataPinjam.dat","ab");
+    bukuPtr = fopen("dataPinjam2.dat","ab");
     printf("Kode buku :");
     scanf("%s", &dataPinjam.kode_buku);
     printf("Qty :");
@@ -23,8 +23,8 @@
     fclose(bukuPtr);
     }
 
-    void printData(tipe){
-    bukuPtr=fopen("dataPinjam.dat", "rb");
+    void printData(){
+    bukuPtr=fopen("dataPinjam2.dat", "rb");
     printf("| Kode Buku | Qty | Harga |\n");
     while(fread(&dataPinjam, sizeof(dataPinjam),1, bukuPtr)){
 
@@ -50,7 +50,7 @@
         isiData();
         break;
     case 2:
-        printData(0);
+        printData();
         break;
     case 9:
         printf("Selamat Tinggal :D");
